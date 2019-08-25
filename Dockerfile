@@ -1,6 +1,7 @@
 FROM alpine
-ADD https://github.com/osrg/gobgp/releases/download/v2.1.0/gobgp_2.1.0_linux_amd64.tar.gz /
-RUN tar zxvf /gobgp_2.1.0_linux_amd64.tar.gz
+ENV GOBGP_VERSION=2.7.0
+ADD https://github.com/osrg/gobgp/releases/download/v${GOBGP_VERSION}/gobgp_${GOBGP_VERSION}_linux_amd64.tar.gz /
+RUN tar zxvf /gobgp_${GOBGP_VERSION}_linux_amd64.tar.gz
 
 FROM alpine
 RUN apk add --no-cache bash
